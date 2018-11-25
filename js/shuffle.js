@@ -2,7 +2,7 @@
 // https://stackoverflow.com/a/2450976/1293256
 // @param  {Array} array The array to shuffle
 // @return {String}       The first item in the shuffled array
-export function shuffle(array) {
+function shuffle(array) {
 	var currentIndex = array.length;
 	var temporaryValue, randomIndex;
 

@@ -1,15 +1,35 @@
 shuffle(nouns);
 shuffle(verbs);
 
-var nounDivs = $();
 for (var i = 0; i < nouns.length; i++) {
-    nounDivs.add("<div>" + nouns[i] + "</div>");
+    $('#reel-one').append("<div>" + nouns[i] + "</div>");
 }
 
-var verbDivs = $();
 for (var i = 0; i < verbs.length; i++) {
-    verbDivs.add("<div>" + verbs[i] + "</div>");
+    $('#reel-two').append("<div>" + verbs[i] + "</div>");
 }
 
-$('#reel-one').html(nounDivs);
-$('#reel-two').html(verbDivs);
+const reelOneEl = document.querySelector('#reel-one');
+const reelOne = new SlotMachine(reelOneEl, {
+    active: 0,
+    delay: nouns.length*10,
+    spins: 2
+});
+
+const reelTwoEl = document.querySelector('#reel-two');
+const reelTwo = new SlotMachine(reelTwoEl, {
+    active: 0,
+    delay: verbs.length*10,
+    spins: 2
+});
+
+const reelThreeEl = document.querySelector('#reel-three');
+const reelThree = new SlotMachine(reelThreeEl, {
+    active: 0,
+    delay: nouns.length*10,
+    spins: 2
+});
+
+reelOne.run();
+reelTwo.run();
+reelThree.run();
