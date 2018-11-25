@@ -17,7 +17,7 @@ for (var i = 0; i < emotions.length; i++) {
 const reelOneEl = document.querySelector('#reel-one');
 const reelOne = new SlotMachine(reelOneEl, {
     active: 0,
-    delay: nouns.length*10,
+    delay: nouns.length*4,
     spins: 2
 });
 

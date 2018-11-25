@@ -20,23 +20,25 @@
 .reel-item {
     font-family: 'Ultra', serif;
     font-size: 12px;
-    height: 58px;
+    height: 36px;
+    padding-top: 20px;
     width: 127px;
     margin-right: 111px;
     margin-left: 16px;
+    border-top: 2px solid black;
 }
 
 #reel-one {
     left: 178px;
-    top: 265px;
+    top: 268px;
 }
 
 #reel-two {
     left: 456px;
-    top: 265px;
+    top: 268px;
 }
 
 #reel-three {
     left: 733px;
-    top: 265px;
+    top: 268px;
 }
