@@ -1,5 +1,6 @@
 shuffle(nouns);
 shuffle(verbs);
+shuffle(emotions);
 
 for (var i = 0; i < nouns.length; i++) {
     $('#reel-one').append("<div>" + nouns[i] + "</div>");
@@ -7,6 +8,10 @@ for (var i = 0; i < nouns.length; i++) {
 
 for (var i = 0; i < verbs.length; i++) {
     $('#reel-two').append("<div>" + verbs[i] + "</div>");
+}
+
+for (var i = 0; i < emotions.length; i++) {
+    $('#reel-three').append("<div>" + emotions[i] + "</div>");
 }
 
 const reelOneEl = document.querySelector('#reel-one');
