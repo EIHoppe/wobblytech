@@ -4,7 +4,7 @@
 .container {
     flex-flow: row;
     z-index: 1;
-    background-image: url("../assets/prototype-2.png");
+    background-image: url("../assets/slot-machine.png");
     width: 1280px;
     height: 720px;
 }

@@ -32,10 +32,17 @@ const reelThree = new SlotMachine(reelThreeEl, {
     delay: 1000
 });
 
-var reelOneShuffles = Math.floor(Math.random() * 4) + 4;
-var reelTwoShuffles = Math.floor(Math.random() * 4) + 1 + reelOneShuffles;
-var reelThreeShuffles = Math.floor(Math.random() * 4) + 1 + reelTwoShuffles;
+function spinTheReels() {
+    if((!reelOne.running) && (!reelTwo.running) && (!reelThree.running))
+    {
+    var reelOneShuffles = Math.floor(Math.random() * 4) + 4;
+    var reelTwoShuffles = Math.floor(Math.random() * 4) + 1 + reelOneShuffles;
+    var reelThreeShuffles = Math.floor(Math.random() * 4) + 1 + reelTwoShuffles;
 
-reelOne.shuffle(reelOneShuffles);
-reelTwo.shuffle(reelTwoShuffles);
-reelThree.shuffle(reelThreeShuffles);
+    reelOne.shuffle(reelOneShuffles);
+    reelTwo.shuffle(reelTwoShuffles);
+    reelThree.shuffle(reelThreeShuffles);
+    }
+}
+
+$(document).click(spinTheReels);
