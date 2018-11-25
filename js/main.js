@@ -17,24 +17,25 @@ for (var i = 0; i < emotions.length; i++) {
 const reelOneEl = document.querySelector('#reel-one');
 const reelOne = new SlotMachine(reelOneEl, {
     active: 0,
-    delay: nouns.length*4,
-    spins: 2
+    delay: 1000
 });
 
 const reelTwoEl = document.querySelector('#reel-two');
 const reelTwo = new SlotMachine(reelTwoEl, {
     active: 0,
-    delay: verbs.length*10,
-    spins: 2
+    delay: 1000
 });
 
 const reelThreeEl = document.querySelector('#reel-three');
 const reelThree = new SlotMachine(reelThreeEl, {
     active: 0,
-    delay: emotions.length*10,
-    spins: 2
+    delay: 1000
 });
 
-reelOne.shuffle();
-reelTwo.shuffle();
-reelThree.shuffle();
+var reelOneShuffles = Math.floor(Math.random() * 4) + 4;
+var reelTwoShuffles = Math.floor(Math.random() * 4) + 1 + reelOneShuffles;
+var reelThreeShuffles = Math.floor(Math.random() * 4) + 1 + reelTwoShuffles;
+
+reelOne.shuffle(reelOneShuffles);
+reelTwo.shuffle(reelTwoShuffles);
+reelThree.shuffle(reelThreeShuffles);
