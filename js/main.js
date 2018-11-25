@@ -3,15 +3,15 @@ shuffle(verbs);
 shuffle(emotions);
 
 for (var i = 0; i < nouns.length; i++) {
-    $('#reel-one').append("<div>" + nouns[i] + "</div>");
+    $('#reel-one').append("<div class=\"reel-item\">" + nouns[i] + "</div>");
 }
 
 for (var i = 0; i < verbs.length; i++) {
-    $('#reel-two').append("<div>" + verbs[i] + "</div>");
+    $('#reel-two').append("<div class=\"reel-item\">" + verbs[i] + "</div>");
 }
 
 for (var i = 0; i < emotions.length; i++) {
-    $('#reel-three').append("<div>" + emotions[i] + "</div>");
+    $('#reel-three').append("<div class=\"reel-item\">" + emotions[i] + "</div>");
 }
 
 const reelOneEl = document.querySelector('#reel-one');
@@ -31,10 +31,10 @@ const reelTwo = new SlotMachine(reelTwoEl, {
 const reelThreeEl = document.querySelector('#reel-three');
 const reelThree = new SlotMachine(reelThreeEl, {
     active: 0,
-    delay: nouns.length*10,
+    delay: emotions.length*10,
     spins: 2
 });
 
-reelOne.run();
-reelTwo.run();
-reelThree.run();
+reelOne.shuffle();
+reelTwo.shuffle();
+reelThree.shuffle();

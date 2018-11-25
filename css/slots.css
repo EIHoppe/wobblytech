@@ -1,3 +1,42 @@
 
 /* This is some fucking custom CSS */
 
+.container {
+    flex-flow: row;
+    z-index: 1;
+    background-image: url("../assets/prototype-2.png");
+    width: 1280px;
+    height: 720px;
+}
+
+.reel {
+    position: absolute;
+    text-align: center;
+    height: 357px;
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+.reel-item {
+    font-family: 'Ultra', serif;
+    font-size: 12px;
+    height: 58px;
+    width: 127px;
+    margin-right: 111px;
+    margin-left: 16px;
+}
+
+#reel-one {
+    left: 178px;
+    top: 265px;
+}
+
+#reel-two {
+    left: 456px;
+    top: 265px;
+}
+
+#reel-three {
+    left: 733px;
+    top: 265px;
+}
