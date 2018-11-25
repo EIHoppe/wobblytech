@@ -1,0 +1,49 @@
+
+/**
+ * Quick and easy CSS3 rolling-number/slot machine?
+ */
+ body {
+    font-size: 700%; /* with this setup you get 1:1 em , so 1em is actually number 1 */
+}
+
+#counter {
+   height: 1em;
+   overflow: hidden;
+}
+
+.digits {
+   float:left;
+   list-style-type: none;
+   font-size: 1em;
+   line-height: 1em;
+}
+
+.digits-first {
+   margin-top: -4em; /* number 4! */
+}
+
+.digits-second {
+   margin-top: 0em; /* number 0! */
+}
+
+.digits-third {
+   margin-top: -4em; /* number 4! */
+}
+
+.digits {
+   animation-duration: 2s;
+   animation-timing-function: ease;
+   animation-delay: 2.2s;
+   animation-fill-mode: forwards;
+}
+
+.luckie {
+   animation-name: luckie;
+}
+
+/* Animations */
+@keyframes luckie {
+   100% {
+       margin-top: -7em;
+   }
+}
