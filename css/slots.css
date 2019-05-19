@@ -2,11 +2,23 @@
 /* This is some fucking custom CSS */
 
 .container {
+    display: flex;
     flex-flow: row;
     z-index: 1;
     background-image: url("../assets/slot-machine.png");
     width: 1280px;
     height: 720px;
+}
+
+.container-small {
+    z-index: 3;
+    width: 600px;
+    height: 600px;
+    padding: 20px 20px;
+    /* background-image: url(../assets//Radar-500.png);
+    background-repeat: no-repeat;
+    background-size: 400px 400px;
+    background-position: center; */
 }
 
 .reel {
