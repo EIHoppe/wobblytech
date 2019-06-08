@@ -177,8 +177,8 @@ window.onload = function(){
             clearInterval(clearVar);}, 3000);
         setTimeout(function(){
             clearInterval(textVar);
-            document.getElementById("LeftScore").textContent = Math.trunc(leftArr.reduce(total) / 70 * 100);
-            document.getElementById("RightScore").textContent = Math.trunc(rightArr.reduce(total) / 70 * 100);
+            document.getElementById("LeftScore").textContent = Math.trunc(leftArr.reduce(total) / 70 * 1000);
+            document.getElementById("RightScore").textContent = Math.trunc(rightArr.reduce(total) / 70 * 1000);
         }, 3000);
     }
 
