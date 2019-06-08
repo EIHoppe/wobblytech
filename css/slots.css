@@ -16,6 +16,16 @@ p{
     height: 720px;
 }
 
+.container-2 {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    z-index: 1;
+    width: 1280px;
+    height: 720px;
+}
+
 .container-small {
     display: flex;
     flex-flow: row;
