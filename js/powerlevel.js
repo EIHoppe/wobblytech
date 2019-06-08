@@ -7,6 +7,10 @@ window.onload = function(){
     var leftArr = [1.5,1.5,1.5,1.5,1.5,1.5,1.5];
     var rightArr = [1.5,1.5,1.5,1.5,1.5,1.5,1.5];
     var labelsArr = [];
+    var blueDarkDefaults = [39,170,225];
+    var blueLightDefaults = [39,170,225];
+    var pinkDarkDefaults = [238,74,154];
+    var pinkLightDefaults = [238,74,154];
 
     //load background image
     /* var img = new Image();
@@ -70,6 +74,11 @@ window.onload = function(){
             gridLines: {
                 display: false,
                 circular: true
+            },
+            pointLabels: {
+                fontColor: 'rgba(0,255,0,1.0)',
+                fontFamily: 'Monospace',
+                fontSize: 14
             }
         }
     };
@@ -107,6 +116,8 @@ window.onload = function(){
         options: radarOptions
     }); 
 
+    Chart.defaults.global.defaultFontSize = 24;
+
     function randomizeValues(arr, chart)
     {
         var min = 1.5;
@@ -135,10 +146,58 @@ window.onload = function(){
         randomizeValues(leftArr, radarLeft);
         randomizeValues(rightArr, radarRight);
     }
+
+    function initializeArrays(value)
+    {
+        for(var i = 0; i < leftArr.length; i++)
+        {
+            leftArr[i] = value;
+        }
+        for(i = 0; i < rightArr.length; i++)
+        {
+            rightArr[i] = value;
+        }
+    }
+
+    function spinText(){
+        var max = 100;
+        var min = 10;
+        var leftNum = Math.trunc((Math.random() * (+max - +min) + +min)); 
+        var rightNum = Math.trunc((Math.random() * (+max - +min) + +min)); 
+        document.getElementById("LeftScore").textContent = leftNum; 
+        document.getElementById("RightScore").textContent = rightNum;
+    }
     
-    document.onclick = function(){
+    document.getElementById("Calculate").onclick = function(){
         updateCount = 0;
+        var total = (total, num) => total + num;
         var clearVar = setInterval(updateCharts, 300);
-        setTimeout(function(){clearInterval(clearVar);}, 3000);
+        var textVar = setInterval(spinText, 34);
+        setTimeout(function(){
+            clearInterval(clearVar);}, 3000);
+        setTimeout(function(){
+            clearInterval(textVar);
+            document.getElementById("LeftScore").textContent = Math.trunc(leftArr.reduce(total) / 70 * 100);
+            document.getElementById("RightScore").textContent = Math.trunc(rightArr.reduce(total) / 70 * 100);
+        }, 3000);
+    }
+
+    document.getElementById("ShowHide").onclick = function(){
+        if(document.getElementById("BodyCon").classList.contains('fadeIn')){
+            document.getElementById("BodyCon").classList.remove("fadeIn");
+            document.getElementById("BodyCon").classList.add('fadeOut');
+        }
+        else{
+            document.getElementById("BodyCon").classList.remove('fadeOut');
+            document.getElementById("BodyCon").classList.add('fadeIn');
+        }
+    }
+
+    document.getElementById("Initialize").onclick = function(){
+        initializeArrays(1.5);
+        radarLeft.update();
+        radarRight.update();
+        document.getElementById("LeftScore").textContent = 0;
+        document.getElementById("RightScore").textContent = 0;
     }
 }

@@ -11,12 +11,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
 </head>
 <html>
-    <div class="container">
-        <div class="container-small">
-            <canvas id="chartLeft" width="500" height="500"></canvas>
+    <div class="blackout">
+        <div class="container fadeIn" id="BodyCon">
+            <div class="container-small" id="Left">
+                <canvas id="chartLeft" width="500" height="500"></canvas>
+            </div>
+            <div class="container-small" id="Right">
+                <canvas id="chartRight" width="500" height="500"></canvas>
+            </div>
+            <div class="score-container">
+                <p class="score-header">Total Score</p>
+                <p class="score" id="LeftScore">0</p>
+            </div>
+            <div class="score-container">
+                <p class="score-header">Total Score</p>
+                <p class="score" id="RightScore">0</p>
+            </div>
         </div>
-        <div class="container-small">
-            <canvas id="chartRight" width="500" height="500"></canvas>
+        <div class="controls">
+            <div>
+                <button class="button" id="ShowHide">Toggle Chart</button>
+                <button class="button" id="Initialize">Initialize Data</button>
+                <button class="button" id="Calculate">Randomize Data</button>
+            </div>
         </div>
     </div>
     <script src="../data/Criteria.js"></script>
